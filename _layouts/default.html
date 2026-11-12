@@ -1,0 +1,143 @@
+{%- capture root -%}{%- include root.html -%}{%- endcapture -%}
+{%- if page.url == '/404.html' -%}{%- assign root = '' -%}{%- endif -%}
+{%- assign desc = page.summary | default: page.description | default: site.description | strip_html | strip_newlines | escape -%}
+{%- assign v = site.time | date: '%Y%m%d%H%M' -%}
+<!doctype html>
+<html lang="{{ site.lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{%- if page.url == '/404.html' %}
+<script>document.write('<base href="' + (location.hostname.indexOf('github.io') > -1 ? '/' + location.pathname.split('/')[1] + '/' : '/') + '">');</script>
+{%- endif %}
+<title>{% if page.url == '/' %}{{ site.title }}: {{ site.tagline }}{% else %}{{ page.title | escape }} | {{ site.title }}{% endif %}</title>
+<meta name="description" content="{{ desc }}">
+<link rel="canonical" href="{{ site.url }}{{ page.url | replace: 'index.html', '' }}">
+<meta name="google-adsense-account" content="{{ site.adsense_client }}">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:type" content="{% if page.collection == 'guides' %}article{% else %}website{% endif %}">
+<meta property="og:title" content="{{ page.title | default: site.tagline | escape }}">
+<meta property="og:description" content="{{ desc }}">
+<meta property="og:url" content="{{ site.url }}{{ page.url | replace: 'index.html', '' }}">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#3a2df0">
+{%- if page.noindex %}
+<meta name="robots" content="noindex">
+{%- endif %}
+<link rel="icon" href="{{ root }}assets/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="{{ root }}manifest.webmanifest">
+<link rel="alternate" type="application/rss+xml" title="{{ site.title }} guides" href="{{ root }}feed.xml">
+<script>try{var t=localStorage.getItem('dt-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ root }}assets/css/base.css?v={{ v }}">
+<link rel="stylesheet" href="{{ root }}assets/css/ui.css?v={{ v }}">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ site.adsense_client }}" crossorigin="anonymous"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"{{ site.title }}","url":"{{ site.url }}/","description":{{ site.description | jsonify }}}</script>
+</head>
+<body data-root="{{ root }}" data-contact="{{ site.contact_url }}" data-alias="{{ site.form_alias }}">
+<a class="skip" href="#main">Skip to content</a>
+<a class="topbar" href="{{ site.contact_url }}" target="_blank" rel="noopener">Contact, if you are interested in this website/domain name/Sponsorship/Advertisement/Partnership</a>
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="logo" href="{{ root }}./" aria-label="Digi.Tech home">Digi<i aria-hidden="true"></i>Tech</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav" class="nav" aria-label="Main">
+      {%- for n in site.nav -%}
+      {%- assign full = '/' | append: n.u -%}
+      <a href="{{ root }}{{ n.u }}"{% if page.url contains full %} aria-current="page"{% endif %}>{{ n.t }}</a>
+      {%- endfor -%}
+    </nav>
+    <div class="head-tools">
+      <div class="search">
+        <input type="search" id="q" placeholder="Search tools, guides, terms" aria-label="Search the site" autocomplete="off">
+        <div id="q-results" class="search-results" hidden></div>
+      </div>
+      <button id="theme" class="icon-btn" type="button" aria-label="Switch between light and dark theme"><span aria-hidden="true"></span></button>
+      <a class="btn btn-brand" href="{{ root }}toolkit/">Get the free kit</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+{{ content }}
+</main>
+
+{%- unless page.url contains '/toolkit/' %}
+<section class="band band-brand" aria-labelledby="nl-h">
+  <div class="wrap band-row">
+    <div>
+      <h2 id="nl-h">New tools and guides, by email</h2>
+      <p>One short note when something useful ships. No spam, and you can leave with one click.</p>
+    </div>
+    <form class="js-form inline-form" data-form="Newsletter signup" novalidate>
+      <label class="sr" for="nl-email">Email address</label>
+      <input id="nl-email" name="email" type="email" required placeholder="you@example.com" autocomplete="email">
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="btn btn-mark" type="submit">Notify me</button>
+      <p class="form-note" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+{%- endunless %}
+
+<footer class="site-foot">
+  <div class="wrap foot-grid">
+    <div>
+      <a class="logo" href="{{ root }}./">Digi<i aria-hidden="true"></i>Tech</a>
+      <p>Free tools and plain-English explanations for the digital technology you use every day. Everything runs in your browser.</p>
+      <p><a class="btn btn-line" href="{{ root }}support/">Support the site</a></p>
+    </div>
+    <nav aria-label="Explore">
+      <h2>Explore</h2>
+      <a href="{{ root }}tools/">All tools</a>
+      <a href="{{ root }}guides/">Guides</a>
+      <a href="{{ root }}glossary/">Glossary</a>
+      <a href="{{ root }}pulse/">Tech pulse</a>
+      <a href="{{ root }}videos/">Videos</a>
+      <a href="{{ root }}quiz/">Digital IQ quiz</a>
+    </nav>
+    <nav aria-label="Get involved">
+      <h2>Get involved</h2>
+      <a href="{{ root }}toolkit/">Free starter kit</a>
+      <a href="{{ root }}support/">Donate</a>
+      <a href="{{ root }}contests/">Contests and prizes</a>
+      <a href="{{ root }}careers/">Work with us</a>
+      <a href="{{ root }}advertise/">Advertise and sponsor</a>
+      <a href="{{ root }}contact/">Contact</a>
+    </nav>
+    <nav aria-label="Site information">
+      <h2>Information</h2>
+      <a href="{{ root }}about/">About</a>
+      <a href="{{ root }}editorial-policy/">Editorial policy</a>
+      <a href="{{ root }}privacy/">Privacy policy</a>
+      <a href="{{ root }}cookies/">Cookie policy</a>
+      <a href="{{ root }}terms/">Terms of use</a>
+      <a href="{{ root }}disclaimer/">Disclaimer and trademarks</a>
+      <a href="{{ root }}site-map/">Site map</a>
+    </nav>
+  </div>
+  <div class="wrap foot-legal">
+    <p><strong>Trademark and copyright disclosure.</strong> Digi.Tech is an independent publication named after its domain, short for "digital technology". It is not affiliated with, sponsored by or endorsed by any company or product that uses the names DigiTech or Digitech, or by any other brand mentioned on this site. All product names, logos and trademarks belong to their respective owners and are used only to identify them. Embedded videos and linked headlines remain the property of their publishers. <a href="{{ root }}disclaimer/">Read the full disclosure</a>.</p>
+    <p>&copy; {{ site.time | date: '%Y' }} Digi.Tech. Original text and code on this site are protected by copyright. For this website, the domain name, sponsorship, advertising or partnership, <a href="{{ site.contact_url }}" target="_blank" rel="noopener">get in touch</a>.</p>
+  </div>
+</footer>
+
+<div id="cookie" class="cookie" role="region" aria-label="Cookie notice" hidden>
+  <p>This site uses cookies to show ads through Google AdSense, and saves your theme and favourite tools on this device. <a href="{{ root }}cookies/">Cookie details</a></p>
+  <button class="btn btn-brand" type="button" id="cookie-ok">OK</button>
+</div>
+
+<script defer src="{{ root }}assets/js/site.js?v={{ v }}"></script>
+<script defer src="{{ root }}assets/js/forms.js?v={{ v }}"></script>
+{%- if page.collection == 'tools' %}
+<script defer src="{{ root }}assets/js/tools-1.js?v={{ v }}"></script>
+<script defer src="{{ root }}assets/js/tools-2.js?v={{ v }}"></script>
+<script defer src="{{ root }}assets/js/tools-3.js?v={{ v }}"></script>
+{%- endif %}
+{%- for s in page.scripts %}
+<script defer src="{{ root }}assets/js/{{ s }}?v={{ v }}"></script>
+{%- endfor %}
+</body>
+</html>
