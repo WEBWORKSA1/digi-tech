@@ -1,0 +1,26 @@
+---
+layout: default
+title: Digital IQ quiz
+summary: Twelve quick questions on passwords, networks, AI and file formats, with a one-line explanation after each answer.
+scripts: [quiz.js]
+---
+{%- capture root -%}{%- include root.html -%}{%- endcapture -%}
+<div class='wrap page'>
+  <header class='page-head'>
+    <h1>Digital IQ quiz</h1>
+    <p class='lede'>How well do you know the technology you use every day? Find out in about three minutes.</p>
+    <div class='bits' data-bits='Q' aria-hidden='true'></div>
+  </header>
+  <div class='quiz panel' id='quiz'>
+    <h2>{{ site.data.quiz.size }} questions, no sign-up</h2>
+    <p>Each question has one right answer. You will see why straight away, so you learn something whether you get it right or not. The order changes every time.</p>
+    <button class='btn btn-brand' id='quiz-start' type='button'>Start the quiz</button>
+  </div>
+  {% include ad.html slot='bottom' %}
+  <div class='prose' style='margin-top:2.5rem'>
+    <h2>What the quiz covers</h2>
+    <p>The questions come from the subjects people most often get wrong: the difference between megabits and megabytes, what the padlock in the address bar does and does not mean, how AI chatbots produce answers, and how to keep files and accounts safe. Each one is explained in full in the <a href='{{ root }}guides/'>guides</a>.</p>
+    <p>Your best score is saved on this device only.</p>
+  </div>
+</div>
+<script type='application/json' id='quiz-data'>{{ site.data.quiz | jsonify }}</script>

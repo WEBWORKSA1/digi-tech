@@ -1,0 +1,47 @@
+---
+layout: default
+title: Tech glossary
+summary: Short, plain-English definitions of the digital technology terms you are most likely to meet, from API to zero-day.
+---
+{%- capture root -%}{%- include root.html -%}{%- endcapture -%}
+{%- assign terms = site.data.glossary | sort_natural: 't' -%}
+<div class='wrap page page-wide'>
+  <header class='page-head'>
+    <h1>Tech glossary</h1>
+    <p class='lede'>{{ terms.size }} terms defined in a sentence or two, without assuming you know the other 79.</p>
+    <div class='bits' data-bits='G' aria-hidden='true'></div>
+  </header>
+  <div class='field' style='max-width:26rem'>
+    <label for='gloss-q'>Find a term</label>
+    <input id='gloss-q' type='search' placeholder='Type a word, such as cookie' autocomplete='off'>
+  </div>
+  {%- assign letters = '' -%}
+  {%- for g in terms -%}
+  {%- assign L = g.t | slice: 0 | upcase -%}
+  {%- unless letters contains L -%}{%- assign letters = letters | append: L -%}{%- endunless -%}
+  {%- endfor -%}
+  {%- assign arr = letters | split: '' %}
+  <nav class='az' aria-label='Jump to a letter'>
+    {%- for L in arr %}<a href='#letter-{{ L }}'>{{ L }}</a>{% endfor %}
+  </nav>
+  <p id='no-terms' class='empty' hidden>No term matches that yet. <a href='{{ root }}contact/'>Ask us to add it</a>.</p>
+  {%- assign cur = '' -%}
+  {%- for g in terms -%}
+  {%- assign L = g.t | slice: 0 | upcase -%}
+  {%- if L != cur -%}
+  {%- unless forloop.first %}
+    </dl>
+  </section>
+  {%- endunless %}
+  <section class='gloss-letter' id='letter-{{ L }}'>
+    <h2>{{ L }}</h2>
+    <dl class='gloss'>
+  {%- assign cur = L -%}
+  {%- endif %}
+      <dt id='{{ g.t | slugify }}'>{{ g.t }}</dt>
+      <dd>{{ g.d }}</dd>
+  {%- endfor %}
+    </dl>
+  </section>
+  {% include ad.html slot='bottom' %}
+</div>

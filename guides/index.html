@@ -1,0 +1,27 @@
+---
+layout: default
+title: Guides
+summary: Plain-English explanations of the digital technology you use every day, each written to be read in about five minutes.
+---
+{%- capture root -%}{%- include root.html -%}{%- endcapture -%}
+<div class='wrap page page-wide'>
+  <header class='page-head'>
+    <h1>Guides</h1>
+    <p class='lede'>Plain-English explanations of the technology you use every day. No jargon left undefined, and each one is short enough to read over a coffee.</p>
+    <div class='bits' data-bits='G' aria-hidden='true'></div>
+  </header>
+  {%- assign topics = site.guides | map: 'topic' | uniq | sort -%}
+  {%- for topic in topics %}
+  <section style='margin-bottom:2.5rem'>
+    <h2>{{ topic }}</h2>
+    <ul class='link-list'>
+      {%- for g in site.guides -%}
+      {%- if g.topic == topic %}
+      <li><a href='{{ root }}{{ g.url | remove_first: '/' }}'>{{ g.title }}</a><span>{{ g.summary }} {{ g.read }} minute read.</span></li>
+      {%- endif -%}
+      {%- endfor %}
+    </ul>
+  </section>
+  {%- endfor %}
+  {% include ad.html slot='bottom' %}
+</div>

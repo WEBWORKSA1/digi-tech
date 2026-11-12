@@ -1,0 +1,49 @@
+---
+layout: default
+title: Site map
+summary: Every page on Digi.Tech in one list.
+---
+{%- capture root -%}{%- include root.html -%}{%- endcapture -%}
+<div class='wrap page page-wide'>
+  <header class='page-head'><h1>Site map</h1></header>
+  <div class='prose'>
+    <h2>Tools</h2>
+    <ul>
+      {%- assign all = site.tools | sort: 'title' -%}
+      {%- for t in all %}
+      <li><a href='{{ root }}{{ t.url | remove_first: '/' }}'>{{ t.title }}</a></li>
+      {%- endfor %}
+    </ul>
+    <h2>Guides</h2>
+    <ul>
+      {%- for g in site.guides %}
+      <li><a href='{{ root }}{{ g.url | remove_first: '/' }}'>{{ g.title }}</a></li>
+      {%- endfor %}
+    </ul>
+    <h2>Explore</h2>
+    <ul>
+      <li><a href='{{ root }}glossary/'>Tech glossary</a></li>
+      <li><a href='{{ root }}pulse/'>Tech pulse</a></li>
+      <li><a href='{{ root }}videos/'>Videos</a></li>
+      <li><a href='{{ root }}quiz/'>Digital IQ quiz</a></li>
+      <li><a href='{{ root }}toolkit/'>Free starter kit</a></li>
+    </ul>
+    <h2>Get involved</h2>
+    <ul>
+      <li><a href='{{ root }}support/'>Support the site</a></li>
+      <li><a href='{{ root }}contests/'>Contests and prizes</a></li>
+      <li><a href='{{ root }}careers/'>Work with us</a></li>
+      <li><a href='{{ root }}advertise/'>Advertise and sponsor</a></li>
+      <li><a href='{{ root }}contact/'>Contact</a></li>
+    </ul>
+    <h2>Information</h2>
+    <ul>
+      <li><a href='{{ root }}about/'>About</a></li>
+      <li><a href='{{ root }}editorial-policy/'>Editorial policy</a></li>
+      <li><a href='{{ root }}privacy/'>Privacy policy</a></li>
+      <li><a href='{{ root }}cookies/'>Cookie policy</a></li>
+      <li><a href='{{ root }}terms/'>Terms of use</a></li>
+      <li><a href='{{ root }}disclaimer/'>Disclaimer and trademarks</a></li>
+    </ul>
+  </div>
+</div>

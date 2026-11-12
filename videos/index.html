@@ -1,0 +1,22 @@
+---
+layout: default
+title: Videos
+summary: The latest uploads from six technology channels worth your time, covering development, AI research and consumer tech.
+---
+{%- capture root -%}{%- include root.html -%}{%- endcapture -%}
+<div class='wrap page page-wide'>
+  <header class='page-head'>
+    <h1>Watch and learn</h1>
+    <p class='lede'>Six channels that explain technology clearly. Press play on any of them to load its most recent uploads, newest first.</p>
+    <div class='bits' data-bits='V' aria-hidden='true'></div>
+  </header>
+  {% include videos.html limit=12 %}
+  {% include ad.html slot='bottom' %}
+  <div class='prose' style='margin-top:3rem'>
+    <h2>Why these channels</h2>
+    <p>There is more technology video than anyone can watch. We picked channels that are accurate, that explain instead of hype, and that cover different ground: two for learning to build things, one for quick orientation on new tools, one for hardware you might buy, and one for research that has not reached products yet.</p>
+    <h2>How the players work</h2>
+    <p>Each player shows the channel's own uploads list, so it is always up to date without anyone here editing it. Nothing is loaded from YouTube until you press play, and the players use YouTube's privacy-enhanced mode. The videos are hosted by YouTube and belong to their creators. Digi.Tech is not affiliated with these channels.</p>
+    <p>Prefer reading? The <a href='{{ root }}guides/'>guides</a> cover the fundamentals in about five minutes each.</p>
+  </div>
+</div>

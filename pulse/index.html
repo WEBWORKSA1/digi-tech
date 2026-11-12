@@ -1,0 +1,26 @@
+---
+layout: default
+title: Tech pulse
+summary: Live headlines from three of the places where new technology surfaces first, refreshed every time you open the page.
+scripts: [live.js]
+---
+{%- capture root -%}{%- include root.html -%}{%- endcapture -%}
+<div class='wrap page page-wide'>
+  <header class='page-head'>
+    <h1>Tech pulse</h1>
+    <p class='lede'>What people who build technology are reading, writing and launching right now. The lists refresh every time you open this page.</p>
+    <p id='pulse-status' class='live off'>Connecting to live feeds</p>
+  </header>
+  {% include pulse.html limit=15 %}
+  {% include ad.html slot='bottom' %}
+  <div class='prose' style='margin-top:3rem'>
+    <h2>Where these headlines come from</h2>
+    <p><strong>Hacker News</strong> is a discussion site where programmers and founders share links and vote on them. Its front page is a reliable early signal of what the industry will be talking about next week.</p>
+    <p><strong>DEV Community</strong> is a publishing platform for software developers. The list shows the posts readers reacted to most over the past seven days, which leans towards practical tutorials and lessons learned.</p>
+    <p><strong>GitHub</strong> is where most open-source software is developed. The list shows projects created in the last two weeks that have gathered the most stars, a rough measure of how many developers found them interesting.</p>
+    <h2>How the page stays current</h2>
+    <p>Your browser asks each source for its public list when the page opens, so what you see is minutes old at most. A snapshot is also saved once a day so the page is never empty.{% if site.data.pulse.updated and site.data.pulse.updated != '' %} The last snapshot was saved on {{ site.data.pulse.updated }}.{% endif %}</p>
+    <p>We show titles and links only. Every item opens on the site that published it, and all headlines, articles and projects remain the property of their authors. Digi.Tech is not affiliated with any of these sources and does not vouch for linked content.</p>
+    <p>Not sure what a term in a headline means? Look it up in the <a href='{{ root }}glossary/'>glossary</a>.</p>
+  </div>
+</div>

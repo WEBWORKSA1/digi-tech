@@ -1,0 +1,41 @@
+---
+layout: default
+title: Free online tools
+summary: Free tools for security, text, development, networks, the web and images. Every one runs in your browser, with nothing uploaded.
+---
+{%- capture root -%}{%- include root.html -%}{%- endcapture -%}
+<div class='wrap page page-wide'>
+  <header class='page-head'>
+    <h1>Free online tools</h1>
+    <p class='lede'>{{ site.tools.size }} tools for the small jobs that come up every day. Each one runs entirely in your browser, so whatever you type or open stays on your device.</p>
+    <div class='bits' data-bits='T' aria-hidden='true'></div>
+  </header>
+  <section id='favs' hidden aria-labelledby='favs-h'>
+    <h2 id='favs-h'>Your favourites</h2>
+    <ul class='tiles'></ul>
+  </section>
+  <div class='field' style='max-width:26rem;margin:1.5rem 0 1rem'>
+    <label for='tool-q'>Filter the list</label>
+    <input id='tool-q' type='search' placeholder='Type a word, such as hash or image' autocomplete='off'>
+  </div>
+  <div class='chips' role='group' aria-label='Filter by category'>
+    <button type='button' class='chip' data-filter='all' aria-pressed='true'>All</button>
+    {%- assign cats = 'Security,Text,Developer,Network,Web and SEO,Media' | split: ',' -%}
+    {%- for c in cats %}
+    <button type='button' class='chip' data-filter='{{ c | slugify }}' aria-pressed='false'>{{ c }}</button>
+    {%- endfor %}
+  </div>
+  <ul class='tiles' id='all-tools'>
+    {%- assign all = site.tools | sort: 'title' -%}
+    {%- for t in all %}
+    {% include tile.html t=t root=root %}
+    {%- endfor %}
+  </ul>
+  <p id='no-tools' class='empty' hidden>No tool matches that. Clear the filter, or <a href='{{ root }}contact/'>tell us what to build next</a>.</p>
+  {% include ad.html slot='bottom' %}
+  <div class='prose' style='margin-top:3rem'>
+    <h2>How these tools work</h2>
+    <p>Most online tools send what you type to a server, process it there and send back the result. These do not. The code is delivered to your browser once, and from then on the work happens on your own phone or computer. That makes them fast, lets them work on a poor connection, and means passwords, documents and photos you use with them are never transmitted or stored by us.</p>
+    <p>Save the ones you use often with <strong>Save to favourites</strong> on any tool page. Favourites are remembered on this device only.</p>
+  </div>
+</div>
