@@ -1,0 +1,43 @@
+---
+layout: default
+title: Contact
+summary: Questions, corrections, tool requests and business inquiries for Digi.Tech.
+---
+{%- capture root -%}{%- include root.html -%}{%- endcapture -%}
+<div class='wrap page page-wide'>
+  <header class='page-head'>
+    <h1>Contact</h1>
+    <p class='lede'>Found a mistake, want a tool built, or have a business proposal? Every message is read by a person.</p>
+    <div class='bits' data-bits='C' aria-hidden='true'></div>
+  </header>
+  <div class='split'>
+    <div class='prose'>
+      <h2>The quickest route</h2>
+      <p>For this website, the domain name, sponsorship, advertising or partnership, use the Web.Works contact page.</p>
+      <div class='btn-row' style='margin-bottom:1.5rem'>
+        <a class='btn btn-brand' href='{{ site.contact_url }}' target='_blank' rel='noopener'>Open the contact page</a>
+        <a class='btn btn-line js-mail' href='{{ site.contact_url }}' data-subject='Digi.Tech inquiry'>Send an email</a>
+      </div>
+      <h2>What to include</h2>
+      <ul>
+        <li><strong>A correction:</strong> the page address and what is wrong. We fix confirmed errors quickly and say so.</li>
+        <li><strong>A tool problem:</strong> what you entered, what you expected and what happened. The <a href='{{ root }}tools/screen-info/'>browser info tool</a> can copy your device details for you.</li>
+        <li><strong>A tool or guide request:</strong> what you are trying to get done.</li>
+        <li><strong>A copyright or trademark concern:</strong> the page address and the material in question. See the <a href='{{ root }}disclaimer/'>disclaimer</a>.</li>
+      </ul>
+      <p>We cannot offer one-to-one technical support or recover accounts, and we will never ask for your password.</p>
+    </div>
+    <div>
+      <h2>Send a message</h2>
+      <form class='js-form form form-2 panel' data-form='Contact form' data-ok='Message sent. Thank you, we will reply by email.' novalidate>
+        <div class='field'><label for='ct-name'>Your name</label><input id='ct-name' name='Name' type='text' required autocomplete='name'></div>
+        <div class='field'><label for='ct-email'>Email address</label><input id='ct-email' name='email' type='email' required autocomplete='email'></div>
+        <div class='field full'><label for='ct-topic'>Topic</label><select id='ct-topic' name='Topic' required><option value=''>Choose one</option><option>Correction or feedback</option><option>Problem with a tool</option><option>Request a tool or guide</option><option>Advertising, sponsorship or partnership</option><option>The website or domain name</option><option>Copyright or trademark</option><option>Something else</option></select></div>
+        <div class='field full'><label for='ct-msg'>Your message</label><textarea id='ct-msg' name='Message' required maxlength='3000'></textarea></div>
+        <input type='text' name='_honey' class='hp' tabindex='-1' autocomplete='off' aria-hidden='true'>
+        <div class='full'><button class='btn btn-brand' type='submit'>Send message</button></div>
+        <p class='form-note full' role='status' aria-live='polite'></p>
+      </form>
+    </div>
+  </div>
+</div>

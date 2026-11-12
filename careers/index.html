@@ -1,0 +1,55 @@
+---
+layout: default
+title: Work with us
+summary: Digi.Tech commissions freelance writers, JavaScript developers, video makers and community builders who can make technology clear.
+---
+{%- capture root -%}{%- include root.html -%}{%- endcapture -%}
+<div class='wrap page page-wide'>
+  <header class='page-head'>
+    <h1>Work with us</h1>
+    <p class='lede'>Digi.Tech is made by freelancers who work remotely, on their own schedule, and are paid for each piece we accept. If you can make technology clear, we would like to hear from you.</p>
+    <div class='bits' data-bits='W' aria-hidden='true'></div>
+  </header>
+
+  <h2>Who we are looking for</h2>
+  <ul class='cards'>
+    <li class='card'><h3>Technical writers</h3><p>You can explain how something works to a reader who has never met it, in 600 accurate words, and you check your facts.</p></li>
+    <li class='card'><h3>Tool developers</h3><p>You write clean, dependency-free JavaScript and care about accessibility. Each tool is a small, self-contained function.</p></li>
+    <li class='card'><h3>Video makers</h3><p>You can turn a guide into a two minute explainer with clear narration and honest visuals.</p></li>
+    <li class='card'><h3>Community and outreach</h3><p>You know where our readers spend time online and can introduce the site there without spamming anyone.</p></li>
+  </ul>
+
+  <div class='split'>
+    <div class='prose'>
+      <h2>How it works</h2>
+      <ol>
+        <li>Send the form with links to work you are proud of.</li>
+        <li>If it is a fit, we agree a brief, a deadline and a fee in writing before you start.</li>
+        <li>You deliver, we edit together, and you are paid when the piece is accepted.</li>
+        <li>Good work leads to regular commissions.</li>
+      </ol>
+      <h2>What to expect from us</h2>
+      <ul>
+        <li>No unpaid trial work.</li>
+        <li>A named credit on what you make, unless you prefer otherwise.</li>
+        <li>Clear briefs and one round of consolidated feedback.</li>
+        <li>Honesty about volume: commissions depend on the budget from advertising and <a href='{{ root }}support/'>supporters</a>, so the number of openings varies from month to month.</li>
+      </ul>
+      <p>We welcome applicants from every country and background. Read the <a href='{{ root }}editorial-policy/'>editorial policy</a> to see the standard we work to.</p>
+    </div>
+    <div>
+      <h2>Apply</h2>
+      <form class='js-form form form-2 panel' data-form='Contributor application' data-ok='Application received. We read every one and reply to those that fit current needs.' novalidate>
+        <div class='field'><label for='ca-name'>Your name</label><input id='ca-name' name='Name' type='text' required autocomplete='name'></div>
+        <div class='field'><label for='ca-email'>Email address</label><input id='ca-email' name='email' type='email' required autocomplete='email'></div>
+        <div class='field'><label for='ca-role'>Role</label><select id='ca-role' name='Role' required><option value=''>Choose one</option><option>Technical writer</option><option>Tool developer</option><option>Video maker</option><option>Community and outreach</option><option>Something else</option></select></div>
+        <div class='field'><label for='ca-time'>Availability</label><select id='ca-time' name='Availability'><option>A few hours a week</option><option>One or two days a week</option><option>Most of the week</option></select></div>
+        <div class='field full'><label for='ca-link'>Link to your portfolio or samples</label><input id='ca-link' name='Portfolio' type='url' required placeholder='https://'></div>
+        <div class='field full'><label for='ca-about'>What would you like to make for Digi.Tech?</label><textarea id='ca-about' name='Pitch' required maxlength='2000'></textarea></div>
+        <input type='text' name='_honey' class='hp' tabindex='-1' autocomplete='off' aria-hidden='true'>
+        <div class='full'><button class='btn btn-brand' type='submit'>Send my application</button></div>
+        <p class='form-note full' role='status' aria-live='polite'></p>
+      </form>
+    </div>
+  </div>
+</div>

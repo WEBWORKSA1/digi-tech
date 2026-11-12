@@ -1,0 +1,70 @@
+---
+layout: default
+title: Support Digi.Tech
+summary: Digi.Tech is free to use and independent. Donations pay for new tools, the people who make them, promotion and contest prizes.
+---
+{%- capture root -%}{%- include root.html -%}{%- endcapture -%}
+<div class='wrap page page-wide'>
+  <header class='page-head'>
+    <h1>Support Digi.Tech</h1>
+    <p class='lede'>Every tool and guide here is free, with no account and no paywall. Advertising covers part of the cost. Readers who chip in cover the rest, and decide how fast the site grows.</p>
+    <div class='bits' data-bits='S' aria-hidden='true'></div>
+  </header>
+
+  <div class='split'>
+    <div>
+      <h2>Where your money goes</h2>
+      <p>This is the split we work to. It is a target, reviewed as the site grows.</p>
+      <ul class='alloc'>
+        <li><span>Building new tools and guides</span><b>30%</b><i style='--w:30%'></i></li>
+        <li><span>Running costs: domain, services and software</span><b>20%</b><i style='--w:20%'></i></li>
+        <li><span>Hiring writers, developers and video makers</span><b>20%</b><i style='--w:20%'></i></li>
+        <li><span>Promotion and marketing</span><b>15%</b><i style='--w:15%'></i></li>
+        <li><span>Contests and prizes</span><b>15%</b><i style='--w:15%'></i></li>
+      </ul>
+      <h2>Pick an amount</h2>
+      <ul class='cards'>
+        <li class='card'><p class='amount'>$5</p><h3>Bit</h3><p>A thank-you for a tool that saved you ten minutes.</p><button type='button' class='btn btn-line' data-amount='5'>Give $5</button></li>
+        <li class='card'><p class='amount'>$25</p><h3>Byte</h3><p>Goes towards the next tool or guide on the list.</p><button type='button' class='btn btn-line' data-amount='25'>Give $25</button></li>
+        <li class='card'><p class='amount'>$100</p><h3>Kilobyte</h3><p>Backs a contest prize or a commissioned guide.</p><button type='button' class='btn btn-line' data-amount='100'>Give $100</button></li>
+      </ul>
+      <p>Want your name on a tool or a prize? See <a href='{{ root }}advertise/'>sponsorship</a>.</p>
+    </div>
+
+    <div>
+      <h2>Make your donation</h2>
+      {%- if site.support_links and site.support_links.size > 0 %}
+      <div class='btn-row' style='margin-bottom:1.25rem'>
+        {%- for l in site.support_links %}
+        <a class='btn btn-brand' href='{{ l.url }}' target='_blank' rel='noopener'>Donate with {{ l.label }}</a>
+        {%- endfor %}
+      </div>
+      <p>Prefer another method, or want to give monthly? Use the form and we will arrange it.</p>
+      {%- else %}
+      <div class='notice'><p>Online payment buttons are being set up. Send a pledge with this form and we will email you a secure payment link. Nothing is charged until you choose to pay.</p></div>
+      {%- endif %}
+      <form class='js-form form form-2 panel' data-form='Donation pledge' data-ok='Thank you. We will email you a secure payment link.' novalidate>
+        <div class='field'><label for='pl-name'>Your name</label><input id='pl-name' name='Name' type='text' required autocomplete='name'></div>
+        <div class='field'><label for='pl-email'>Email address</label><input id='pl-email' name='email' type='email' required autocomplete='email'></div>
+        <div class='field'><label for='pledge-amount'>Amount in US dollars</label><input id='pledge-amount' name='Amount' type='number' min='1' step='1' required placeholder='25'></div>
+        <div class='field'><label for='pl-freq'>How often</label><select id='pl-freq' name='Frequency'><option>One time</option><option>Every month</option></select></div>
+        <div class='field full'><label for='pl-use'>Put it towards</label><select id='pl-use' name='Purpose'><option>Wherever it is needed most</option><option>New tools and guides</option><option>Hiring contributors</option><option>Contests and prizes</option><option>Promotion and marketing</option></select></div>
+        <div class='field full'><label for='pl-msg'>Message (optional)</label><textarea id='pl-msg' name='Message' maxlength='1000' style='min-height:5rem'></textarea></div>
+        <input type='text' name='_honey' class='hp' tabindex='-1' autocomplete='off' aria-hidden='true'>
+        <div class='full'><button class='btn btn-brand' type='submit'>Send my pledge</button></div>
+        <p class='form-note full' role='status' aria-live='polite'></p>
+      </form>
+    </div>
+  </div>
+
+  <div class='prose' style='margin-top:3rem'>
+    <h2>Other ways to help</h2>
+    <ul>
+      <li>Share a tool or a guide with someone who needs it.</li>
+      <li>Tell us about a mistake or a missing tool on the <a href='{{ root }}contact/'>contact page</a>.</li>
+      <li>Enter a <a href='{{ root }}contests/'>contest</a>, or <a href='{{ root }}careers/'>work with us</a>.</li>
+    </ul>
+    <h2>The small print</h2>
+    <p>Donations are voluntary gifts to an independent publication. They are not payments for goods or services and are not tax-deductible. Giving does not buy advertising, influence what we publish, improve your chances in a contest or change the adverts you see. We never ask visitors to click on adverts. If you donate by mistake, contact us within 14 days and we will refund it.</p>
+  </div>
+</div>

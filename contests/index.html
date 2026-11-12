@@ -1,0 +1,59 @@
+---
+layout: default
+title: Contests and prizes
+summary: Two skill contests anyone can enter free. Pitch the tool we should build next, or explain a tech term better than we did.
+---
+{%- capture root -%}{%- include root.html -%}{%- endcapture -%}
+<div class='wrap page page-wide'>
+  <header class='page-head'>
+    <h1>Contests and prizes</h1>
+    <p class='lede'>Two contests, judged on merit and free to enter. The best entries become part of the site, with your name on them.</p>
+    <div class='bits' data-bits='C' aria-hidden='true'></div>
+  </header>
+
+  <ul class='cards'>
+    <li class='card'><h3>Tool Idea Challenge</h3><p>Describe a small online tool you wish existed, in 150 words or fewer. Say who would use it and what it should do.</p><p><strong>The winner gets</strong> the round's prize, the tool built and published here, and a credit on its page.</p></li>
+    <li class='card'><h3>Explain It Simply</h3><p>Pick any technology term and explain it in 100 words or fewer so that a twelve year old would understand.</p><p><strong>The winner gets</strong> the round's prize and their explanation published in the glossary with a credit.</p></li>
+  </ul>
+
+  <div class='split'>
+    <div class='prose'>
+      <h2>How a round works</h2>
+      <ol>
+        <li>A round opens. Its prize and closing date are posted on this page.</li>
+        <li>You enter with the form. One entry per person for each contest.</li>
+        <li>The editors judge every entry on usefulness, clarity and originality.</li>
+        <li>The winner is contacted by email and announced here.</li>
+      </ol>
+      <h2>Current round</h2>
+      <div class='notice'><p>Round one is open for early entries. Its prize and closing date will be posted here as soon as the prize fund is confirmed, and everyone who has entered will be emailed first.</p></div>
+      <p>Prizes are paid for by <a href='{{ root }}support/'>supporters</a> and sponsors. To fund a prize in your company's name, see <a href='{{ root }}advertise/'>sponsorship</a>.</p>
+      <h2>Rules in brief</h2>
+      <ul>
+        <li>Entry is free. No purchase or donation is needed, and donating does not improve your chances.</li>
+        <li>These are contests of skill. Winners are chosen by judging, not by chance.</li>
+        <li>You must be 18 or over, or the age of majority where you live. Void where prohibited by law.</li>
+        <li>Your entry must be your own work and must not have been published elsewhere.</li>
+        <li>You keep ownership of your entry. By entering you allow Digi.Tech to publish it, edited for length and clarity, with credit to you.</li>
+        <li>Winners are responsible for any tax due on a prize. A prize may be replaced with one of equal value.</li>
+        <li>The judges' decision is final. Entries that are abusive, unlawful or generated in bulk are removed.</li>
+        <li>Your details are used only to run the contest, as set out in the <a href='{{ root }}privacy/'>privacy policy</a>.</li>
+        <li>These contests are run by Digi.Tech alone. They are not sponsored, endorsed or administered by Google, YouTube or any other company named on this site.</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Enter now</h2>
+      <form class='js-form form form-2 panel' data-form='Contest entry' data-ok='Entry received. Good luck. We will email you when the round closes.' novalidate>
+        <div class='field'><label for='ce-name'>Your name</label><input id='ce-name' name='Name' type='text' required autocomplete='name'></div>
+        <div class='field'><label for='ce-email'>Email address</label><input id='ce-email' name='email' type='email' required autocomplete='email'></div>
+        <div class='field'><label for='ce-which'>Contest</label><select id='ce-which' name='Contest' required><option value=''>Choose one</option><option>Tool Idea Challenge</option><option>Explain It Simply</option></select></div>
+        <div class='field'><label for='ce-country'>Country</label><input id='ce-country' name='Country' type='text' required autocomplete='country-name'></div>
+        <div class='field full'><label for='ce-entry'>Your entry</label><textarea id='ce-entry' name='Entry' required maxlength='1200' style='min-height:10rem'></textarea><small>150 words at most for a tool idea, 100 for an explanation.</small></div>
+        <label class='check full'><input type='checkbox' name='Agreed to rules' value='Yes' required> <span>I am 18 or over, this is my own work, and I accept the rules on this page.</span></label>
+        <input type='text' name='_honey' class='hp' tabindex='-1' autocomplete='off' aria-hidden='true'>
+        <div class='full'><button class='btn btn-brand' type='submit'>Submit my entry</button></div>
+        <p class='form-note full' role='status' aria-live='polite'></p>
+      </form>
+    </div>
+  </div>
+</div>

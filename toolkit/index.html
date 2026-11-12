@@ -1,0 +1,41 @@
+---
+layout: default
+title: Free Digital Tune-Up kit
+summary: A free 25-point checklist for securing your accounts, devices, backups, Wi-Fi and privacy, plus pointers for whatever you are building.
+---
+{%- capture root -%}{%- include root.html -%}{%- endcapture -%}
+<div class='wrap page page-wide'>
+  <div class='split'>
+    <div>
+      <h1>Get the free Digital Tune-Up kit</h1>
+      <p class='lede'>Twenty-five steps that take you from exposed to well protected and well organised in a single afternoon. Free, with nothing to install.</p>
+      <h2>What is in the kit</h2>
+      <ul>
+        <li><strong>The 25-point checklist</strong>, in five parts: accounts, devices, backups, home network and privacy.</li>
+        <li><strong>The right tool for each step.</strong> Every item links straight to the tool or guide that gets it done.</li>
+        <li><strong>A printable version</strong> to work through and tick off.</li>
+        <li><strong>A reply from a person.</strong> Tell us what you are working on and we will point you to the most useful resources for it.</li>
+      </ul>
+      <h2>Who it is for</h2>
+      <p>Anyone who suspects their digital life is held together by one reused password and good luck. It is written for individuals, families and small teams, and it assumes no technical background.</p>
+      <h2>What happens when you send the form</h2>
+      <ol>
+        <li>The checklist unlocks on this page straight away.</li>
+        <li>We read what you told us and reply by email if you asked for help.</li>
+        <li>You hear from us only when there is a new tool or guide worth your time.</li>
+      </ol>
+    </div>
+    <div>
+      {% include lead-form.html root=root %}
+      <p class='meta' style='margin-top:.8rem'>Your details are used to send the kit and reply to you. They are never sold. Read the <a href='{{ root }}privacy/'>privacy policy</a>.</p>
+    </div>
+  </div>
+  <section class='sec' style='margin-top:3rem'>
+    <h2>Working on something bigger?</h2>
+    <ul class='cards'>
+      <li class='card'><h3>Promote a product</h3><p>Sponsor a tool or a guide that your customers already use.</p><p><a href='{{ root }}advertise/'>Advertising and sponsorship</a></p></li>
+      <li class='card'><h3>Partner with us</h3><p>Co-publish a guide, fund a contest prize or build a tool together.</p><p><a href='{{ site.contact_url }}' target='_blank' rel='noopener'>Start a conversation</a></p></li>
+      <li class='card'><h3>Join the team</h3><p>Write, build or make video for Digi.Tech as a paid freelancer.</p><p><a href='{{ root }}careers/'>Open roles</a></p></li>
+    </ul>
+  </section>
+</div>

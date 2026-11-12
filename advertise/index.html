@@ -1,0 +1,51 @@
+---
+layout: default
+title: Advertise, sponsor or partner
+summary: Put your brand beside tools and guides that people use while they are solving a technology problem, or talk to us about the site and domain.
+---
+{%- capture root -%}{%- include root.html -%}{%- endcapture -%}
+<div class='wrap page page-wide'>
+  <header class='page-head'>
+    <h1>Advertise, sponsor or partner</h1>
+    <p class='lede'>People arrive at Digi.Tech in the middle of a task: securing an account, shipping a website, fixing a connection. That is a good moment to be the helpful name next to the answer.</p>
+    <div class='bits' data-bits='A' aria-hidden='true'></div>
+    <p style='margin-top:1.25rem'><a class='btn btn-brand' href='{{ site.contact_url }}' target='_blank' rel='noopener'>Start a conversation</a></p>
+  </header>
+
+  <h2>Ways to work together</h2>
+  <ul class='cards'>
+    <li class='card'><h3>Sponsor a tool</h3><p>Your name and link on a tool page your customers already use, for a fixed term.</p></li>
+    <li class='card'><h3>Sponsor a guide or a series</h3><p>Support plain-English education on a subject close to your product. We keep editorial control.</p></li>
+    <li class='card'><h3>Site sponsorship</h3><p>A single, clearly labelled sponsor position across the site.</p></li>
+    <li class='card'><h3>Fund a contest prize</h3><p>Put your name on a round of the Tool Idea Challenge or Explain It Simply.</p></li>
+    <li class='card'><h3>Build something together</h3><p>Co-develop a tool, a data set or a video series and publish it on both sites.</p></li>
+    <li class='card'><h3>The website and domain</h3><p>Interested in acquiring or licensing this website or the Digi.Tech domain name? We are open to serious inquiries.</p></li>
+  </ul>
+
+  <div class='split'>
+    <div class='prose'>
+      <h2>How we handle sponsorship</h2>
+      <ul>
+        <li>Sponsored positions are always labelled as such.</li>
+        <li>Sponsors do not review or change editorial content, and tools work the same for everyone.</li>
+        <li>We do not accept sponsorship for products we would not recommend to a friend, and we follow the content rules of our advertising partners.</li>
+        <li>Display advertising on the site is served by Google AdSense and is bought through Google, not through us.</li>
+      </ul>
+      <p>See the <a href='{{ root }}editorial-policy/'>editorial policy</a> for the full position.</p>
+    </div>
+    <div>
+      <h2>Tell us what you have in mind</h2>
+      <form class='js-form form form-2 panel' data-form='Advertising or partnership inquiry' data-ok='Thank you. We will reply by email within a few working days.' novalidate>
+        <div class='field'><label for='ad-name'>Your name</label><input id='ad-name' name='Name' type='text' required autocomplete='name'></div>
+        <div class='field'><label for='ad-co'>Company</label><input id='ad-co' name='Company' type='text' autocomplete='organization'></div>
+        <div class='field'><label for='ad-email'>Work email</label><input id='ad-email' name='email' type='email' required autocomplete='email'></div>
+        <div class='field'><label for='ad-what'>Interested in</label><select id='ad-what' name='Interest' required><option value=''>Choose one</option><option>Sponsoring a tool or guide</option><option>Site sponsorship</option><option>Funding a contest prize</option><option>A partnership</option><option>The website or domain name</option><option>Something else</option></select></div>
+        <div class='field full'><label for='ad-budget'>Budget range (optional)</label><select id='ad-budget' name='Budget'><option>Prefer not to say</option><option>Under $500</option><option>$500 to $2,000</option><option>$2,000 to $10,000</option><option>Over $10,000</option></select></div>
+        <div class='field full'><label for='ad-msg'>Your message</label><textarea id='ad-msg' name='Message' required maxlength='2000'></textarea></div>
+        <input type='text' name='_honey' class='hp' tabindex='-1' autocomplete='off' aria-hidden='true'>
+        <div class='full'><button class='btn btn-brand' type='submit'>Send my inquiry</button></div>
+        <p class='form-note full' role='status' aria-live='polite'></p>
+      </form>
+    </div>
+  </div>
+</div>
