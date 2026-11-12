@@ -1,0 +1,143 @@
+---
+layout: default
+title: Home
+scripts: [tools-1.js, live.js]
+---
+{%- capture root -%}{%- include root.html -%}{%- endcapture -%}
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Digital tech, decoded<i aria-hidden="true"></i></h1>
+      <p class="lede">Free tools that run in your browser, and plain-English guides to the technology you use every day. No sign-up and no uploads.</p>
+      <div class="hero-find">
+        <label for="find">What do you need to do?</label>
+        <input id="find" type="search" placeholder="Try password, QR code, JSON or image" autocomplete="off">
+        <ul id="find-hits" class="hero-hits" aria-live="polite"></ul>
+      </div>
+    </div>
+    <div class="quick" data-cat="security">
+      <h2>Need a strong password right now?</h2>
+      <div class="tool" data-tool="password-generator" data-compact><p class="tool-wait">Loading the password generator.</p></div>
+      <p class="tool-foot">Made on your device and never sent anywhere. <a href="{{ root }}tools/password-generator/">More options</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="h-tools">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="h-tools">Tools people reach for most</h2>
+      <a href="{{ root }}tools/">See all {{ site.tools.size }} tools</a>
+    </div>
+    <ul class="tiles">
+      {%- assign picks = 'qr-code-generator,image-compressor,password-strength,json-formatter,word-counter,download-time,color-converter,utm-builder,typing-test,meta-tag-generator,contrast-checker,timestamp-converter' | split: ',' -%}
+      {%- for p in picks -%}
+      {%- assign u = '/tools/' | append: p | append: '/' -%}
+      {%- assign t = site.tools | where: 'url', u | first -%}
+      {%- if t %}
+      {% include tile.html t=t root=root %}
+      {%- endif -%}
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="h-guides">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="h-guides">Guides that explain it properly</h2>
+      <a href="{{ root }}guides/">All guides</a>
+    </div>
+    <div class="guide-grid">
+      {%- assign lead = site.guides | where: 'url', '/guides/what-is-digital-technology/' | first -%}
+      <article class="guide-lead">
+        <h3><a href="{{ root }}guides/what-is-digital-technology/">{{ lead.title }}</a></h3>
+        <p>{{ lead.summary }}</p>
+      </article>
+      <ul class="link-list">
+        {%- assign shown = 0 -%}
+        {%- for g in site.guides -%}
+        {%- if g.url != lead.url and shown < 5 %}
+        <li><a href="{{ root }}{{ g.url | remove_first: '/' }}">{{ g.title }}</a><span>{{ g.summary }}</span></li>
+        {%- assign shown = shown | plus: 1 -%}
+        {%- endif -%}
+        {%- endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="h-kit">
+  <div class="wrap split">
+    <div>
+      <h2 id="h-kit">Get the free Digital Tune-Up kit</h2>
+      <p class="lede">A 25-point checklist that takes an ordinary person from exposed to well protected and well organised in one afternoon: accounts, devices, backups, Wi-Fi and privacy.</p>
+      <ul>
+        <li>Every step links to the tool or guide that gets it done</li>
+        <li>Tell us what you are building and we will point you to the right resources</li>
+        <li>Free, and yours as soon as you send the form</li>
+      </ul>
+      <p><a href="{{ root }}toolkit/">What is in the kit</a></p>
+    </div>
+    {% include lead-form.html root=root compact=true %}
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="h-pulse">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="h-pulse">Tech pulse</h2>
+      <p id="pulse-status" class="live off">Connecting to live feeds</p>
+    </div>
+    {% include pulse.html limit=5 %}
+    <p style="margin-top:1.25rem"><a href="{{ root }}pulse/">Open the full pulse</a></p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="h-videos">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="h-videos">Watch and learn</h2>
+      <a href="{{ root }}videos/">All channels</a>
+    </div>
+    {% include videos.html limit=3 %}
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="h-term">
+  <div class="wrap split">
+    <div>
+      <h2 id="h-term">Term of the day</h2>
+      <div class="term" id="term"><dfn>Bit</dfn><p>The smallest unit of digital information, a single 0 or 1.</p></div>
+      <p style="margin-top:1rem"><a href="{{ root }}glossary/">Browse all {{ site.data.glossary.size }} terms in the glossary</a></p>
+    </div>
+    <div>
+      <h2>How sharp is your Digital IQ?</h2>
+      <p class="lede">Twelve quick questions on passwords, networks, AI and file formats. Each answer comes with a one-line explanation.</p>
+      <p><a class="btn btn-brand" href="{{ root }}quiz/">Take the quiz</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="h-support">
+  <div class="wrap split">
+    <div>
+      <h2 id="h-support">Help keep every tool free</h2>
+      <p>Digi.Tech is paid for by advertising and by readers. Donations cover hosting and new tools, pay the people who write and build here, and fund the prizes in our contests.</p>
+      <div class="btn-row">
+        <a class="btn btn-brand" href="{{ root }}support/">Support the site</a>
+        <a class="btn btn-line" href="{{ root }}contests/">Enter a contest</a>
+        <a class="btn btn-line" href="{{ root }}careers/">Work with us</a>
+      </div>
+    </div>
+    <div>
+      <h2>Reach people who care about technology</h2>
+      <p>Sponsor a tool, a guide or the whole site, or talk to us about the website and the Digi.Tech domain name itself.</p>
+      <div class="btn-row">
+        <a class="btn btn-line" href="{{ root }}advertise/">Advertising and sponsorship</a>
+        <a class="btn btn-line" href="{{ site.contact_url }}" target="_blank" rel="noopener">Contact us</a>
+      </div>
+    </div>
+  </div>
+</section>
+<script type="application/json" id="term-data">{{ site.data.glossary | jsonify }}</script>
