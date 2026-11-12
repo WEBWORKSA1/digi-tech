@@ -1,0 +1,48 @@
+- q: "Which is bigger, a megabit or a megabyte?"
+  a: ["A megabit", "A megabyte", "They are the same size"]
+  c: 1
+  why: "A byte is eight bits, so a megabyte is eight times larger. Internet speeds are sold in megabits, files are measured in megabytes."
+- q: "What does the padlock next to a web address tell you?"
+  a: ["The site is trustworthy", "The connection to the site is encrypted", "The site has been checked for malware", "The site belongs to a registered company"]
+  c: 1
+  why: "The padlock means data travelling between you and the site is encrypted. Scam sites have padlocks too."
+- q: "Which second step protects you best against fake login pages?"
+  a: ["A code sent by text message", "A code from an authenticator app", "A passkey or security key", "A security question"]
+  c: 2
+  why: "Passkeys and security keys check the real address of the site before responding, so a fake page gets nothing. Codes can be typed into a fake page and passed on."
+- q: "A new 1 TB drive shows as about 931 GB on your computer. Why?"
+  a: ["The drive is faulty", "Pre-installed software uses the rest", "The maker counts in thousands and the computer counts in 1,024s", "Formatting always removes 7 percent"]
+  c: 2
+  why: "The drive holds a trillion bytes as promised. The computer divides by 1,024 three times instead of 1,000, which gives a smaller number for the same amount."
+- q: "At its core, what does an AI chatbot do to produce an answer?"
+  a: ["Looks the answer up in a database of facts", "Predicts a likely next piece of text, over and over", "Follows rules written by programmers for each topic", "Copies the best matching web page"]
+  c: 1
+  why: "A language model repeatedly predicts the next token. That is why it is fluent, and also why it can state false things confidently."
+- q: "In the 3-2-1 backup rule, what does the 1 stand for?"
+  a: ["One backup every week", "One copy kept somewhere else", "One external drive", "One password for all backups"]
+  c: 1
+  why: "Three copies, on two kinds of storage, with one copy off-site so that fire, flood or theft cannot take everything."
+- q: "Which format keeps a logo sharp at any size?"
+  a: ["JPEG", "PNG", "SVG", "GIF"]
+  c: 2
+  why: "SVG stores drawing instructions instead of pixels, so it scales without blurring."
+- q: "What is the binary number 1010 in everyday decimal?"
+  a: ["5", "8", "10", "12"]
+  c: 2
+  why: "From the left, the positions are worth 8, 4, 2 and 1. Eight plus two is ten."
+- q: "What is a router's main job?"
+  a: ["Storing your files", "Directing data between your devices and the internet", "Making your processor faster", "Removing viruses"]
+  c: 1
+  why: "A router reads the address on each packet of data and sends it the right way, both within your home and out to the internet."
+- q: "A text says a parcel is held until you pay a small fee, with a link. What is the safest move?"
+  a: ["Tap the link to see whether it looks real", "Reply to ask who sent it", "Open the courier's own app or type its address yourself", "Pay it, since the amount is small"]
+  c: 2
+  why: "Never use the route the message gives you. If the parcel is real, it will show in the courier's own app or site."
+- q: "What does DNS do?"
+  a: ["Encrypts your connection", "Turns website names into numeric addresses", "Stores your passwords", "Chooses your Wi-Fi channel"]
+  c: 1
+  why: "The Domain Name System is the internet's address book. It turns a name you can read into the IP address computers use."
+- q: "What is a cookie?"
+  a: ["A small piece of data a website saves in your browser", "A kind of virus", "A copy of your browsing history", "A saved password in plain text"]
+  c: 0
+  why: "Cookies let sites remember you between pages and visits. They are used for sign-ins and settings, and also for advertising."
