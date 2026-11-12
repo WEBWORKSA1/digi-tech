@@ -1,0 +1,160 @@
+- t: Algorithm
+  d: "A fixed series of steps a computer follows to solve a problem or make a decision, such as sorting a list or choosing which post to show you next."
+- t: API
+  d: "Application programming interface. A published set of rules that lets one piece of software request data or services from another."
+- t: Authenticator app
+  d: "An app that shows a short code which changes every 30 seconds, used as a second step when signing in."
+- t: Backup
+  d: "A separate copy of your files kept so they can be restored if the original is lost, damaged or encrypted by ransomware."
+- t: Bandwidth
+  d: "The maximum amount of data a connection can carry each second, usually given in megabits per second."
+- t: Binary
+  d: "The base 2 number system, which uses only the digits 0 and 1. Computers store and process everything in binary."
+- t: Bit
+  d: "The smallest unit of digital information, a single 0 or 1."
+- t: Blockchain
+  d: "A shared record of transactions kept in linked blocks across many computers, designed so that past entries cannot be quietly changed."
+- t: Bluetooth
+  d: "A short-range wireless standard for linking nearby devices such as headphones, keyboards and watches."
+- t: Browser
+  d: "The app you use to open websites, such as Chrome, Safari, Edge or Firefox."
+- t: Bug
+  d: "A mistake in software that makes it behave in a way its makers did not intend."
+- t: Byte
+  d: "Eight bits. One byte can hold a single letter of English text. File sizes are counted in bytes."
+- t: Cache
+  d: "A store of recently used data kept close at hand so it does not have to be fetched or worked out again. Your browser caches images to load pages faster."
+- t: CAPTCHA
+  d: "A quick test, such as picking out images or ticking a box, that websites use to tell people from automated programs."
+- t: Cloud
+  d: "Computers in large data centres that you use over the internet instead of owning. Cloud storage and cloud apps run there, not on your device."
+- t: Cookie
+  d: "A small piece of data a website saves in your browser, used to keep you signed in, remember settings or track visits for advertising."
+- t: CPU
+  d: "Central processing unit. The main chip in a device, which carries out the instructions in software."
+- t: CSS
+  d: "Cascading Style Sheets. The language that sets the colours, fonts and layout of a web page."
+- t: Data centre
+  d: "A building filled with servers, storage and network equipment that runs websites, apps and cloud services."
+- t: Database
+  d: "An organised collection of information that software can search and update quickly."
+- t: DNS
+  d: "Domain Name System. The internet's address book, which turns a name such as digi.tech into the numeric IP address computers use to find it."
+- t: Domain name
+  d: "The readable address of a website, such as digi.tech. It is registered for a yearly fee and points to the server that hosts the site."
+- t: Download
+  d: "Copying data from the internet to your device. The opposite is upload."
+- t: Encryption
+  d: "Scrambling information with a key so that only someone with the right key can read it."
+- t: End-to-end encryption
+  d: "Encryption where only the sender and the recipient hold the keys, so the service carrying the message cannot read it."
+- t: Ethernet
+  d: "The standard for wired network connections. A cable to the router is faster and steadier than Wi-Fi."
+- t: Fibre broadband
+  d: "An internet connection carried as pulses of light through glass cables, giving high speeds in both directions."
+- t: Firewall
+  d: "Software or hardware that checks network traffic and blocks connections that break its rules."
+- t: Firmware
+  d: "Software built into a piece of hardware, such as a router or a camera, that controls how it works. It is updated less often than apps but should be kept current."
+- t: Gigabyte
+  d: "A unit of data equal to 1,000 megabytes, written GB. Some systems count it as 1,024 megabytes."
+- t: GPU
+  d: "Graphics processing unit. A chip built to do many simple calculations at once, used for graphics, video and training AI models."
+- t: Hallucination
+  d: "A confident answer from an AI system that sounds right but is false or invented."
+- t: Hash
+  d: "A fixed-length fingerprint calculated from data. The same input always gives the same hash, and the input cannot be recovered from it."
+- t: Hotspot
+  d: "A Wi-Fi network created by a phone or small device that shares its mobile data connection."
+- t: HTML
+  d: "HyperText Markup Language. The language that describes the content and structure of a web page."
+- t: HTTPS
+  d: "The secure version of the protocol browsers use to load websites. It encrypts data between you and the site. It does not prove the site is honest."
+- t: Internet of Things
+  d: "Everyday objects with a network connection, such as smart speakers, doorbells, thermostats and light bulbs. Often shortened to IoT."
+- t: IP address
+  d: "A numeric label that identifies a device on a network, such as 192.168.1.10, so that data can be delivered to it."
+- t: ISP
+  d: "Internet service provider. The company that connects your home or phone to the internet."
+- t: JavaScript
+  d: "The programming language that runs inside web browsers and makes pages interactive. Every tool on this site is written in it."
+- t: JSON
+  d: "JavaScript Object Notation. A simple text format for structured data, used by most apps to exchange information with servers."
+- t: Large language model
+  d: "An AI system trained on huge amounts of text to predict what comes next, which lets it write, summarise, translate and answer questions. Often shortened to LLM."
+- t: Latency
+  d: "The delay between sending a request and getting a response, measured in milliseconds. Also called ping."
+- t: Machine learning
+  d: "A way of building software by showing it many examples and letting it find the patterns, instead of writing every rule by hand."
+- t: Malware
+  d: "Software made to cause harm, including viruses, spyware and ransomware."
+- t: Megabit
+  d: "One million bits. Internet speeds are given in megabits per second, written Mbps. Eight megabits make one megabyte."
+- t: Megabyte
+  d: "One million bytes, written MB. A typical phone photo is 2 to 5 megabytes."
+- t: Mesh Wi-Fi
+  d: "Several Wi-Fi units placed around a home that work together as one network to remove dead spots."
+- t: Metadata
+  d: "Data about data. A photo's metadata can include the time, the camera and the location where it was taken."
+- t: Open source
+  d: "Software whose code is published for anyone to inspect, use and improve."
+- t: Operating system
+  d: "The core software that runs a device and its apps, such as Windows, macOS, Android, iOS or Linux."
+- t: Passkey
+  d: "A way to sign in using your device's fingerprint, face or PIN instead of a password. It cannot be guessed or phished."
+- t: Password manager
+  d: "An app that creates, stores and fills in a different strong password for every account, locked behind one main password."
+- t: Patch
+  d: "A software update that fixes a bug or closes a security hole."
+- t: Phishing
+  d: "A message that pretends to come from someone you trust in order to steal passwords, money or access."
+- t: Pixel
+  d: "One of the tiny dots that make up a digital image or a screen."
+- t: Prompt
+  d: "The instruction or question you type into an AI system."
+- t: QR code
+  d: "A square pattern that stores text, most often a web address, in a form a phone camera can read instantly."
+- t: RAM
+  d: "Random access memory. Fast, short-term memory a device uses for whatever is open right now. It empties when the power goes off."
+- t: Ransomware
+  d: "Malware that encrypts your files and demands payment for the key. Tested backups are the best defence."
+- t: Resolution
+  d: "The number of pixels in an image or on a screen, given as width by height, such as 1920 by 1080."
+- t: Router
+  d: "The box that connects the devices in your home to each other and to the internet, and directs data between them."
+- t: SaaS
+  d: "Software as a service. Software you use through a browser and pay for by subscription, instead of installing and owning it."
+- t: Search engine
+  d: "A service that indexes web pages and returns the ones most relevant to the words you type."
+- t: Server
+  d: "A computer that provides data or services to other computers over a network. Every website lives on one."
+- t: Spam
+  d: "Unwanted messages sent in bulk, usually advertising and sometimes scams."
+- t: SSD
+  d: "Solid-state drive. Storage with no moving parts, much faster and tougher than an older spinning hard disk."
+- t: Streaming
+  d: "Playing video or audio as it arrives over the internet, without downloading the whole file first."
+- t: Sync
+  d: "Keeping the same files or settings identical across several devices. Useful, but not the same as a backup."
+- t: TLS
+  d: "Transport Layer Security. The encryption that protects HTTPS connections. It replaced the older SSL."
+- t: Token
+  d: "In AI, a word or piece of a word that a language model reads and writes. In security, a code that proves you are signed in."
+- t: Two-factor authentication
+  d: "Signing in with two different kinds of proof, usually a password plus a code or prompt on your phone. Often shortened to 2FA."
+- t: Upload
+  d: "Sending data from your device to the internet. Video calls and cloud backups depend on upload speed."
+- t: URL
+  d: "Uniform resource locator. The full address of a page or file on the web."
+- t: USB
+  d: "Universal Serial Bus. The standard connector family for charging devices and linking them to computers. USB-C is the current reversible plug."
+- t: UUID
+  d: "Universally unique identifier. A 128-bit random label used by software to name records without risk of duplicates."
+- t: VPN
+  d: "Virtual private network. An encrypted tunnel between your device and a server elsewhere, which hides your traffic from the local network and changes your apparent location."
+- t: Webhook
+  d: "An automatic message one service sends to another the moment something happens, such as a payment arriving."
+- t: Wi-Fi
+  d: "Wireless networking that links devices to a router using radio signals."
+- t: Zero-day
+  d: "A security flaw that attackers are using before the maker has released a fix."
