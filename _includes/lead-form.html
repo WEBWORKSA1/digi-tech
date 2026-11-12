@@ -1,0 +1,14 @@
+<form class='js-form form form-2 panel' data-form='Starter kit request' data-ok='Done. Your checklist is unlocked below, and we will reply by email.' data-after='kit-link' novalidate>
+  <div class='field'><label for='lead-name'>Your name</label><input id='lead-name' name='Name' type='text' required autocomplete='name'></div>
+  <div class='field'><label for='lead-email'>Email address</label><input id='lead-email' name='email' type='email' required autocomplete='email'></div>
+  <div class='field'><label for='lead-role'>I am a</label><select id='lead-role' name='Role' required><option value=''>Choose one</option><option>Business owner or founder</option><option>Marketer or creator</option><option>Developer or IT professional</option><option>Student or career changer</option><option>Curious individual</option></select></div>
+  <div class='field'><label for='lead-need'>I want help with</label><select id='lead-need' name='Interest' required><option value=''>Choose one</option><option>Building or improving a website</option><option>Getting more traffic</option><option>Using AI and automation</option><option>Security and privacy</option><option>Advertising or partnering with Digi.Tech</option><option>Something else</option></select></div>
+  {%- unless include.compact %}
+  <div class='field full'><label for='lead-msg'>Tell us about your project (optional)</label><textarea id='lead-msg' name='Message' maxlength='2000'></textarea></div>
+  {%- endunless %}
+  <label class='check full'><input type='checkbox' name='Consent' value='Yes' required> <span>Email me the checklist and occasional updates. I can unsubscribe at any time. See the <a href='{{ include.root }}privacy/'>privacy policy</a>.</span></label>
+  <input type='text' name='_honey' class='hp' tabindex='-1' autocomplete='off' aria-hidden='true'>
+  <div class='full'><button class='btn btn-brand' type='submit'>Send me the free kit</button></div>
+  <p class='form-note full' role='status' aria-live='polite'></p>
+  <p id='kit-link' class='notice full' hidden>Your checklist is ready. <a href='{{ include.root }}toolkit/checklist/'>Open the 25-point Digital Tune-Up Checklist</a>.</p>
+</form>

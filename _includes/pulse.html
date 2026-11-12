@@ -1,0 +1,18 @@
+<div class='pulse-grid'>
+{%- assign cols = 'hn|Hacker News|What developers are reading,dev|DEV Community|Top posts this week,gh|GitHub|New projects gaining stars' | split: ',' -%}
+{%- for c in cols -%}
+{%- assign p = c | split: '|' -%}
+{%- assign key = p[0] -%}
+{%- assign items = site.data.pulse[key] %}
+  <section class='pulse-col'>
+    <h3>{{ p[1] }} <small>{{ p[2] }}</small></h3>
+    <ol class='pulse-list' data-feed='{{ key }}' data-limit='{{ include.limit }}'>
+    {%- for it in items limit: include.limit %}
+      <li><div><a href='{{ it.u | escape }}' target='_blank' rel='noopener nofollow'>{{ it.t | escape }}</a><small>{{ it.m | escape }}</small></div></li>
+    {%- else %}
+      <li><span class='wait'>Loading live headlines</span></li>
+    {%- endfor %}
+    </ol>
+  </section>
+{%- endfor %}
+</div>

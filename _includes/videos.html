@@ -1,0 +1,8 @@
+<div class='video-grid'>
+{%- for c in site.data.channels limit: include.limit %}
+  <article class='video'>
+    <div class='video-frame'><button type='button' data-playlist='{{ c.list }}' data-title='Latest videos from {{ c.name }}'>Play the latest from {{ c.name }}</button></div>
+    <div class='video-body'><h3>{{ c.name }}</h3><p>{{ c.about }}</p></div>
+  </article>
+{%- endfor %}
+</div>

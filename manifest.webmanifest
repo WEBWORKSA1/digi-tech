@@ -1,0 +1,10 @@
+{
+  "name": "Digi.Tech",
+  "short_name": "Digi.Tech",
+  "description": "Free browser-based tools and plain-English guides to digital technology.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f1f2fb",
+  "theme_color": "#3a2df0",
+  "icons": [{ "src": "assets/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}

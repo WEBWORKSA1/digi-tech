@@ -1,0 +1,21 @@
+---
+layout: null
+permalink: /feed.xml
+---
+<?xml version='1.0' encoding='UTF-8'?>
+<rss version='2.0'>
+<channel>
+  <title>{{ site.title | xml_escape }} guides</title>
+  <link>{{ site.url }}/</link>
+  <description>{{ site.description | xml_escape }}</description>
+  {%- for g in site.guides %}
+  <item>
+    <title>{{ g.title | xml_escape }}</title>
+    <link>{{ site.url }}{{ g.url }}</link>
+    <guid>{{ site.url }}{{ g.url }}</guid>
+    <description>{{ g.summary | xml_escape }}</description>
+    <pubDate>{{ g.updated | date: '%a, %d %b %Y 00:00:00 +0000' }}</pubDate>
+  </item>
+  {%- endfor %}
+</channel>
+</rss>
