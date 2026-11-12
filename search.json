@@ -1,0 +1,26 @@
+---
+layout: null
+permalink: /search.json
+---
+[
+{%- for t in site.tools %}
+{"t":{{ t.title | jsonify }},"u":{{ t.url | remove_first: '/' | jsonify }},"d":{{ t.summary | jsonify }},"k":"Tool"},
+{%- endfor %}
+{%- for g in site.guides %}
+{"t":{{ g.title | jsonify }},"u":{{ g.url | remove_first: '/' | jsonify }},"d":{{ g.summary | jsonify }},"k":"Guide"},
+{%- endfor %}
+{%- for x in site.data.glossary %}
+{%- assign s = x.t | slugify %}
+{"t":{{ x.t | jsonify }},"u":{{ 'glossary/#' | append: s | jsonify }},"d":{{ x.d | jsonify }},"k":"Term"},
+{%- endfor %}
+{"t":"Free starter kit","u":"toolkit/","d":"The 25-point Digital Tune-Up Checklist and help with your project","k":"Page"},
+{"t":"Tech pulse","u":"pulse/","d":"Live headlines from developer communities","k":"Page"},
+{"t":"Videos","u":"videos/","d":"Latest uploads from trusted technology channels","k":"Page"},
+{"t":"Digital IQ quiz","u":"quiz/","d":"Twelve questions on everyday digital technology","k":"Page"},
+{"t":"Support Digi.Tech","u":"support/","d":"Donate to keep the tools free","k":"Page"},
+{"t":"Contests and prizes","u":"contests/","d":"Tool idea and explain-it-simply challenges","k":"Page"},
+{"t":"Work with us","u":"careers/","d":"Paid roles for writers, developers and video makers","k":"Page"},
+{"t":"Advertise and sponsor","u":"advertise/","d":"Sponsorship, advertising and partnerships","k":"Page"},
+{"t":"Contact","u":"contact/","d":"Questions, corrections and inquiries","k":"Page"},
+{"t":"About Digi.Tech","u":"about/","d":"Who we are and how the site works","k":"Page"}
+]
