@@ -2,6 +2,7 @@
 layout: default
 ---
 {%- capture root -%}{%- include root.html -%}{%- endcapture -%}
+{%- assign key = page.url | remove: '/tools/' | remove: '/' -%}
 <div class='wrap page page-wide'>
   <nav class='crumbs' aria-label='Breadcrumb'><a href='{{ root }}./'>Home</a> / <a href='{{ root }}tools/'>Tools</a> / <span>{{ page.category }}</span></nav>
   <header class='page-head'>
@@ -9,8 +10,8 @@ layout: default
     <p class='lede'>{{ page.summary }}</p>
   </header>
   <div class='tool-shell' data-cat='{{ page.category | slugify }}'>
-    <div class='tool' data-tool='{{ page.slug }}'><p class='tool-wait'>Loading the tool. It needs JavaScript to run.</p></div>
-    <p class='tool-foot'>Runs entirely in your browser. Nothing you enter is uploaded. <button type='button' class='link-btn' data-fav='{{ page.slug }}'>Save to favourites</button></p>
+    <div class='tool' data-tool='{{ key }}'><p class='tool-wait'>Loading the tool. It needs JavaScript to run.</p></div>
+    <p class='tool-foot'>Runs entirely in your browser. Nothing you enter is uploaded. <button type='button' class='link-btn' data-fav='{{ key }}'>Save to favourites</button></p>
   </div>
   {% include ad.html slot='top' %}
   <div class='cols'>
@@ -18,7 +19,7 @@ layout: default
 {{ content }}
     </article>
     <aside class='side'>
-      <h2>More {{ page.category | downcase }} tools</h2>
+      <h2>More {{ page.category }} tools</h2>
       <ul class='side-list'>
       {%- assign rel = site.tools | where: 'category', page.category -%}
       {%- for t in rel -%}

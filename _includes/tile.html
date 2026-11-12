@@ -1,1 +1,2 @@
-<li class='tile' data-cat='{{ include.t.category | slugify }}' data-slug='{{ include.t.slug }}'><h3><a href='{{ include.root }}{{ include.t.url | remove_first: '/' }}'>{{ include.t.title }}</a></h3><p>{{ include.t.summary }}</p><small>{{ include.t.category }}</small></li>
+{%- assign key = include.t.url | remove: '/tools/' | remove: '/' -%}
+<li class='tile' data-cat='{{ include.t.category | slugify }}' data-slug='{{ key }}'><h3><a href='{{ include.root }}{{ include.t.url | remove_first: '/' }}'>{{ include.t.title }}</a></h3><p>{{ include.t.summary }}</p><small>{{ include.t.category }}</small></li>

@@ -12,7 +12,7 @@ Digital tech, decoded: free browser-based tools, plain-English guides, a tech gl
 | `_guides/` | One Markdown file per guide |
 | `_data/` | Glossary, quiz questions, video channels, pulse snapshot |
 | `assets/` | CSS and JavaScript |
-| `scripts/refresh.mjs` + `.github/workflows/refresh.yml` | Daily job that refreshes the pulse snapshot and asks Pages to rebuild |
+| `scripts/refresh.mjs` + `docs/refresh-workflow.yml` | Daily job that refreshes the pulse snapshot and asks Pages to rebuild (see below to switch it on) |
 | `docs/BUILD-PROMPT.md` | The phase-wise prompt this site was built from |
 
 All internal links are relative, so the site works unchanged at `https://webworksa1.github.io/digi-tech/` and at the root of a custom domain.
@@ -45,6 +45,10 @@ Every form posts to the site inbox through FormSubmit. The address is assembled 
 ## Donations
 
 Add payment links (PayPal, Stripe Payment Link, Buy Me a Coffee, Ko-fi, anything with a URL) under `support_links` in `_config.yml`. Until then the support page collects pledges through the form.
+
+## Switch on the daily snapshot (optional)
+
+The tech pulse already refreshes live in each visitor's browser, and the video players always show each channel's newest uploads. For a server-side snapshot as well, copy `docs/refresh-workflow.yml` to `.github/workflows/refresh.yml` (GitHub: **Add file → Create new file**, paste, commit). It runs once a day, commits `_data/pulse.json` and asks Pages to rebuild.
 
 ## Add content
 

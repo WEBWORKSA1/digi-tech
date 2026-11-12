@@ -21,4 +21,4 @@ Your plan is a maximum, measured in megabits. A download window usually shows me
 
 ### What speed do I need for streaming?
 
-About 5 Mbps for HD and 25 Mbps for 4K, for each screen playing at once.
+About 5 Mbps for HD and 15 to 25 Mbps for 4K, for each screen playing at once.

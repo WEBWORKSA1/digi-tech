@@ -11,7 +11,7 @@ Enter an amount, choose its unit and read every other unit in the table.
 
 Storage makers count in thousands: a gigabyte is 1,000,000,000 bytes. Much software, including Windows, counts in multiples of 1,024 and still writes GB. The official names for the 1,024-based units are kibibyte, mebibyte, gibibyte and tebibyte, written KiB, MiB, GiB and TiB.
 
-This is why a new 1 TB drive shows up as about 931 GB. Nothing is missing. The drive holds a trillion bytes, and the computer is reporting that same amount in tebibyte-sized steps.
+This is why a new 1 TB drive shows up as about 931 GB. Nothing is missing. The drive holds a trillion bytes, and the computer is reporting that same amount in units of 1,024.
 
 ## Questions people ask
 
@@ -21,6 +21,6 @@ No. A byte is eight bits. Internet speeds are sold in megabits per second, files
 
 ### How much is a gigabyte in real terms?
 
-Roughly 250 phone photos, an hour of standard-definition video, or about fifteen minutes of 4K video.
+Roughly 250 phone photos, an hour of standard-definition streaming, or under ten minutes of 4K streaming.
 
 More background in the [internet speed guide](../../guides/internet-speed-explained/).

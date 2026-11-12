@@ -3,8 +3,19 @@ layout: null
 permalink: /search.json
 ---
 [
-{%- for t in site.tools %}
+{%- assign picks = 'qr-code-generator,image-compressor,password-strength,json-formatter,word-counter,typing-test' | split: ',' -%}
+{%- for p in picks -%}
+{%- assign u = '/tools/' | append: p | append: '/' -%}
+{%- assign t = site.tools | where: 'url', u | first -%}
+{%- if t %}
 {"t":{{ t.title | jsonify }},"u":{{ t.url | remove_first: '/' | jsonify }},"d":{{ t.summary | jsonify }},"k":"Tool"},
+{%- endif -%}
+{%- endfor -%}
+{%- for t in site.tools -%}
+{%- assign key = t.url | remove: '/tools/' | remove: '/' -%}
+{%- unless picks contains key %}
+{"t":{{ t.title | jsonify }},"u":{{ t.url | remove_first: '/' | jsonify }},"d":{{ t.summary | jsonify }},"k":"Tool"},
+{%- endunless -%}
 {%- endfor %}
 {%- for g in site.guides %}
 {"t":{{ g.title | jsonify }},"u":{{ g.url | remove_first: '/' | jsonify }},"d":{{ g.summary | jsonify }},"k":"Guide"},
