@@ -1,0 +1,76 @@
+title: Digi.Tech
+tagline: Digital tech, decoded
+description: Free browser-based tools, plain-English guides and a tech glossary that make digital technology easier to use and understand.
+url: https://digi.tech
+baseurl: ""
+lang: en
+permalink: pretty
+markdown: kramdown
+timezone: Etc/UTC
+
+# Advertising
+adsense_client: ca-pub-6620975821265271
+# Paste AdSense ad unit slot IDs here to switch on fixed units. Auto ads need nothing.
+adsense_slots:
+  top: ""
+  article: ""
+  bottom: ""
+
+# Every inquiry link on the site points here.
+contact_url: https://web.works/contact
+
+# Optional: the random alias FormSubmit gives you after activation.
+form_alias: ""
+
+# Payment links for the support page. Example:
+#   - label: PayPal
+#     url: https://www.paypal.com/donate/?hosted_button_id=XXXX
+support_links: []
+
+nav:
+  - t: Tools
+    u: tools/
+  - t: Guides
+    u: guides/
+  - t: Glossary
+    u: glossary/
+  - t: Pulse
+    u: pulse/
+  - t: Videos
+    u: videos/
+  - t: Quiz
+    u: quiz/
+
+collections:
+  tools:
+    output: true
+    permalink: /tools/:name/
+  guides:
+    output: true
+    permalink: /guides/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: tools
+    values:
+      layout: tool
+  - scope:
+      path: ""
+      type: guides
+    values:
+      layout: guide
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
+
+exclude:
+  - README.md
+  - docs
+  - scripts
+  - node_modules
+  - Gemfile
+  - Gemfile.lock
+  - vendor
