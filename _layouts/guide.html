@@ -1,0 +1,30 @@
+---
+layout: default
+---
+{%- capture root -%}{%- include root.html -%}{%- endcapture -%}
+<div class='wrap page'>
+  <nav class='crumbs' aria-label='Breadcrumb'><a href='{{ root }}./'>Home</a> / <a href='{{ root }}guides/'>Guides</a> / <span>{{ page.topic }}</span></nav>
+  <header class='page-head'>
+    <h1>{{ page.title }}</h1>
+    <p class='lede'>{{ page.summary }}</p>
+    <p class='meta'>Updated <time datetime='{{ page.updated | date: '%Y-%m-%d' }}'>{{ page.updated | date: '%-d %B %Y' }}</time>, {{ page.read }} minute read</p>
+  </header>
+  {% include ad.html slot='top' %}
+  <article class='prose'>
+{{ content }}
+  </article>
+  {% include ad.html slot='article' %}
+  <section class='next'>
+    <h2>Keep reading</h2>
+    <ul class='link-list'>
+    {%- assign shown = 0 -%}
+    {%- for g in site.guides -%}
+    {%- if g.url != page.url and shown < 6 %}
+      <li><a href='{{ root }}{{ g.url | remove_first: '/' }}'>{{ g.title }}</a><span>{{ g.summary }}</span></li>
+    {%- assign shown = shown | plus: 1 -%}
+    {%- endif -%}
+    {%- endfor %}
+    </ul>
+  </section>
+</div>
+<script type='application/ld+json'>{"@context":"https://schema.org","@type":"Article","headline":{{ page.title | jsonify }},"description":{{ page.summary | jsonify }},"dateModified":"{{ page.updated | date: '%Y-%m-%d' }}","mainEntityOfPage":"{{ site.url }}{{ page.url }}","publisher":{"@type":"Organization","name":"Digi.Tech","url":"{{ site.url }}/"}}</script>

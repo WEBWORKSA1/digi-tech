@@ -1,0 +1,7 @@
+{%- assign s = site.adsense_slots[include.slot] -%}
+{%- if s and s != '' %}
+<div class='ad' aria-label='Advertisement'>
+  <ins class='adsbygoogle' style='display:block' data-ad-client='{{ site.adsense_client }}' data-ad-slot='{{ s }}' data-ad-format='auto' data-full-width-responsive='true'></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+{%- endif -%}

@@ -1,0 +1,37 @@
+---
+layout: default
+---
+{%- capture root -%}{%- include root.html -%}{%- endcapture -%}
+<div class='wrap page page-wide'>
+  <nav class='crumbs' aria-label='Breadcrumb'><a href='{{ root }}./'>Home</a> / <a href='{{ root }}tools/'>Tools</a> / <span>{{ page.category }}</span></nav>
+  <header class='page-head'>
+    <h1>{{ page.title }}</h1>
+    <p class='lede'>{{ page.summary }}</p>
+  </header>
+  <div class='tool-shell' data-cat='{{ page.category | slugify }}'>
+    <div class='tool' data-tool='{{ page.slug }}'><p class='tool-wait'>Loading the tool. It needs JavaScript to run.</p></div>
+    <p class='tool-foot'>Runs entirely in your browser. Nothing you enter is uploaded. <button type='button' class='link-btn' data-fav='{{ page.slug }}'>Save to favourites</button></p>
+  </div>
+  {% include ad.html slot='top' %}
+  <div class='cols'>
+    <article class='prose'>
+{{ content }}
+    </article>
+    <aside class='side'>
+      <h2>More {{ page.category | downcase }} tools</h2>
+      <ul class='side-list'>
+      {%- assign rel = site.tools | where: 'category', page.category -%}
+      {%- for t in rel -%}
+      {%- if t.url != page.url %}
+        <li><a href='{{ root }}{{ t.url | remove_first: '/' }}'>{{ t.title }}</a></li>
+      {%- endif -%}
+      {%- endfor %}
+      </ul>
+      <p><a href='{{ root }}tools/'>See all tools</a></p>
+      <h2>Found a problem?</h2>
+      <p>Tell us what went wrong or what to build next on the <a href='{{ root }}contact/'>contact page</a>.</p>
+    </aside>
+  </div>
+  {% include ad.html slot='bottom' %}
+</div>
+<script type='application/ld+json'>{"@context":"https://schema.org","@type":"WebApplication","name":{{ page.title | jsonify }},"description":{{ page.summary | jsonify }},"url":"{{ site.url }}{{ page.url }}","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>

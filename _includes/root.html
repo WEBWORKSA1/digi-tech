@@ -1,0 +1,1 @@
+{%- assign p = page.url | split: '/' -%}{%- assign n = p.size | minus: 1 -%}{%- assign last = p | last -%}{%- if last contains '.' -%}{%- assign n = n | minus: 1 -%}{%- endif -%}{%- if n < 1 -%}./{%- else -%}{%- for i in (1..n) -%}../{%- endfor -%}{%- endif -%}
