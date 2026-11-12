@@ -1,5 +1,5 @@
 ---
-title: Internet speed explained: Mbps, MB and what you really need
+title: 'Internet speed explained: Mbps, MB and what you really need'
 topic: Networks
 summary: The difference between megabits and megabytes, what download, upload and latency mean, and how much speed a household needs.
 updated: 2026-11-12

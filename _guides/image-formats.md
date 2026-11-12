@@ -1,5 +1,5 @@
 ---
-title: JPEG, PNG, WebP, AVIF, SVG and GIF: which image format to use
+title: 'JPEG, PNG, WebP, AVIF, SVG and GIF: which image format to use'
 topic: Web
 summary: What each image format is good at, where it fails, and a simple rule for choosing the right one for photos, graphics and logos.
 updated: 2026-11-12

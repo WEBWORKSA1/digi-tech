@@ -1,5 +1,5 @@
 ---
-title: Passkeys explained: signing in without a password
+title: 'Passkeys explained: signing in without a password'
 topic: Security
 summary: What a passkey is, how it works with your fingerprint or face, why it cannot be phished, and what happens if you lose your phone.
 updated: 2026-11-12
